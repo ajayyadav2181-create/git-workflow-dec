@@ -29,6 +29,3 @@ jobs:
       - name: Run test
         run: | 
           pipenv run pytest -v
-        
-      - name: Run tests (ignore no tests)
-        run: pytest || [ $? -eq 5 ]
