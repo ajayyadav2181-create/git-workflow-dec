@@ -29,3 +29,8 @@ jobs:
       - name: Run test
         run: | 
           pipenv run pytest -v
+        
+      - name: Debug step
+        run: |
+          set -x
+          pytest -v || echo "Pytest exited with $?"
