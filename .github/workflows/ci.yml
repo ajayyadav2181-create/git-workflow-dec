@@ -30,7 +30,5 @@ jobs:
         run: | 
           pipenv run pytest -v
         
-      - name: Debug step
-        run: |
-          set -x
-          pytest -v || echo "Pytest exited with $?"
+      - name: Run tests (ignore no tests)
+        run: pytest || [ $? -eq 5 ]
